@@ -23,14 +23,14 @@ namespace ConsoleApp1
 
             uint yearNumber = uint.Parse(userString);
 
-            if (yearNumber % 4 == 0) //&& (yearNumber % 400 == 0) && (yearNumber % 100 != 0))
+            if ((yearNumber % 4 == 0 && yearNumber % 100 != 0) || yearNumber % 400 == 0)
             {
-                Console.WriteLine($"Год {yearNumber} является високосным");
+                Console.WriteLine($"{yearNumber} год является високосным");
                 Console.ReadLine();
             }
             else
             {
-                Console.WriteLine($"Год {yearNumber} не является високосным");
+                Console.WriteLine($"{yearNumber} год не является високосным");
                 Console.ReadLine();
             }
         }
