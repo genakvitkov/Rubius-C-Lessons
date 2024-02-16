@@ -1,0 +1,7 @@
+D:\Rubius C#\Lesson_5\HospitalHomework\bin\Debug\HospitalHomework.exe.config
+D:\Rubius C#\Lesson_5\HospitalHomework\bin\Debug\HospitalHomework.exe
+D:\Rubius C#\Lesson_5\HospitalHomework\bin\Debug\HospitalHomework.pdb
+D:\Rubius C#\Lesson_5\HospitalHomework\obj\Debug\HospitalHomework.csproj.AssemblyReference.cache
+D:\Rubius C#\Lesson_5\HospitalHomework\obj\Debug\HospitalHomework.csproj.CoreCompileInputs.cache
+D:\Rubius C#\Lesson_5\HospitalHomework\obj\Debug\HospitalHomework.exe
+D:\Rubius C#\Lesson_5\HospitalHomework\obj\Debug\HospitalHomework.pdb
