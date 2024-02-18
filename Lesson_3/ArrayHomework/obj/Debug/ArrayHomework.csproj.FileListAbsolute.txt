@@ -1,0 +1,7 @@
+D:\Rubius C#\Lesson_3\ArrayHomework\bin\Debug\ArrayHomework.exe.config
+D:\Rubius C#\Lesson_3\ArrayHomework\bin\Debug\ArrayHomework.exe
+D:\Rubius C#\Lesson_3\ArrayHomework\bin\Debug\ArrayHomework.pdb
+D:\Rubius C#\Lesson_3\ArrayHomework\obj\Debug\ArrayHomework.csproj.AssemblyReference.cache
+D:\Rubius C#\Lesson_3\ArrayHomework\obj\Debug\ArrayHomework.csproj.CoreCompileInputs.cache
+D:\Rubius C#\Lesson_3\ArrayHomework\obj\Debug\ArrayHomework.exe
+D:\Rubius C#\Lesson_3\ArrayHomework\obj\Debug\ArrayHomework.pdb
