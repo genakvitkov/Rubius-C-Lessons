@@ -2,12 +2,36 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace HospitalHomework
 {
     class Program
     {
+        public static Random rand = new Random();
+
+        public static int GenerateIllness()
+        {
+            var random = rand;
+            int code = random.Next(1, 10);
+            return code;
+
+        }
+
+        public static void ChooseDoctor(Patient patient, List<Doctor> doctors)
+        {
+            foreach (Doctor doctor in doctors)
+            {
+                if (patient.RecommendedDoctor == doctor.Speciality)
+                {
+                    Console.WriteLine($"Пациент {patient.Name} c диагнозом {patient.Diagnosis}\nнаправлен к доктору {doctor.Name} со специальностью {doctor.Speciality}");
+
+                    doctor.SetAppointment(patient);
+                    break;
+                }
+            }
+        }
+       
         static void Main(string[] args)
         {
             var patients = new List<Patient>()
@@ -24,133 +48,31 @@ namespace HospitalHomework
             new Doctor { Name = "Ирина Александровна", Speciality = "Психиатр" }
             };
 
-            SetIllness(patients[0]);
-            ChooseDoctor(patients[0], doctors);
-            foreach (Doctor doctor in doctors) 
-            { 
-             if (patients[0].RecommendedDoctor == doctor.Speciality) 
-                {
-                    patients[0].GetAppointment(doctor);
-                }
-            }
-
-            foreach (Doctor doctor in doctors) 
-            { 
-            if (patients[0].Appointment == doctor) 
-                {
-                    doctor.Cure(patients[0]);
-                }
-            }
-
-            SetIllness(patients[1]);
-            ChooseDoctor(patients[1], doctors);
-            foreach (Doctor doctor in doctors)
+            while (true) 
             {
-                if (patients[1].RecommendedDoctor == doctor.Speciality)
+                for (int i = 0; i < patients.Count; i++)
                 {
-                    patients[1].GetAppointment(doctor);
-                }
-            }
+                    int code = GenerateIllness();
+                    patients[i].GetIllness(code);
+                    ChooseDoctor(patients[i], doctors);
 
-            foreach (Doctor doctor in doctors)
-            {
-                if (patients[1].Appointment == doctor)
-                {
-                    doctor.Cure(patients[1]);
-                }
-            }
-
-            SetIllness(patients[2]);
-            ChooseDoctor(patients[2], doctors);
-            foreach (Doctor doctor in doctors)
-            {
-                if (patients[2].RecommendedDoctor == doctor.Speciality)
-                {
-                    patients[2].GetAppointment(doctor);
-                }
-            }
-
-            foreach (Doctor doctor in doctors)
-            {
-                if (patients[2].Appointment == doctor)
-                {
-                    doctor.Cure(patients[2]);
-                }
-            }
-
-
-            /*
-                        foreach (Patient p in patients)
+                    foreach (Doctor doctor in doctors)
+                    {                 
+                        if (doctor.Appointment == patients[i])
                         {
-                            SetIllness(p);
-                            ChooseDoctor(p, doctors);
-                        }*/
-
-            Console.ReadLine();
-            
-
-        }
-
-        public static void SetIllness(Patient patient)
-        {
-            var rand = new Random();
-            int code = rand.Next(1, 10);
-            var illness = new Dictionary<int, string>()
-            {
-                {1, "Посттравматическое расстройство"},
-                {2, "Пограничное расстройство"},
-                {3, "Тревожно-депрессивное расстройство"},
-                {4, "Ушиб"},
-                {5, "Сотрясение"},
-                {6, "Перелом"},
-                {7, "ОРВИ"},
-                {8, "Грипп"},
-                {9, "Ангина"}
-            };
-            Console.WriteLine(code);
-
-            foreach (var item in illness)
-            {
-                if (item.Key == code)
-                {
-                    Console.WriteLine(item.Key);
-                    patient.Diagnosis = item.Value;
-                    patient.IsIll = true;
-
-                    if (item.Key <= 3)
-                    {
-                        patient.RecommendedDoctor = "Психиатр";
+                            doctor.Cure(doctor.Appointment);
+                        }
                     }
-                    else if (item.Key >= 4 && item.Key < 7)
-                    {
-                        patient.RecommendedDoctor = "Травматолог";
-                    }
-                    else
-                    {
-                        patient.RecommendedDoctor = "Терапевт";
-                    }
+                    Console.WriteLine("");
                 }
-            }
-
-            Console.WriteLine($"У пациента {patient.Name} {patient.Diagnosis}");
-            Console.WriteLine($"Рекомендуемый специалист:{patient.RecommendedDoctor}");
-        }
-
-        public static void ChooseDoctor(Patient patient, List<Doctor> doctors)
-        {
-            foreach (Doctor doctor in doctors)
-            {
-                if (patient.RecommendedDoctor == doctor.Speciality)
-                {
-                    Console.WriteLine($"Пациент {patient.Name} c диагнозом {patient.Diagnosis} \n направлен к доктору {doctor.Name} со специальностью {doctor.Speciality}");
-
-                    patient.Appointment = doctor;
-                    break;
-                }
-            }
-        }
-    }
+                Console.ReadLine();
+            }                     
+        }  
+    }       
 }
 
-    
+
+
+
+
 
