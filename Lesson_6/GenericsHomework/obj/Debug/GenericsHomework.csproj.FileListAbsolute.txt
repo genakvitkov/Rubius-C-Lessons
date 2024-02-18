@@ -1,0 +1,7 @@
+D:\Rubius C#\Lesson_6\GenericsHomework\obj\Debug\GenericsHomework.csproj.AssemblyReference.cache
+D:\Rubius C#\Lesson_6\GenericsHomework\obj\Debug\GenericsHomework.csproj.CoreCompileInputs.cache
+D:\Rubius C#\Lesson_6\GenericsHomework\bin\Debug\GenericsHomework.exe.config
+D:\Rubius C#\Lesson_6\GenericsHomework\bin\Debug\GenericsHomework.exe
+D:\Rubius C#\Lesson_6\GenericsHomework\bin\Debug\GenericsHomework.pdb
+D:\Rubius C#\Lesson_6\GenericsHomework\obj\Debug\GenericsHomework.exe
+D:\Rubius C#\Lesson_6\GenericsHomework\obj\Debug\GenericsHomework.pdb
